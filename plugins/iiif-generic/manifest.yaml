@@ -1,0 +1,36 @@
+manifest_version: "1"
+
+id: iiif-generic
+name: "IIIF Search API (generic)"
+protocol: iiif-search
+maintainer: "portolan-core@example.org"
+status: official
+version: "0.1.0"
+
+base_url: "https://example.org/search"
+
+capabilities:
+  - full_text
+  - pagination
+  - iiif_manifest
+
+rate_limit:
+  rps: 2
+  burst: 5
+
+auth_scheme: none
+rights_default: unknown
+
+coverage:
+  description: |
+    Reference connector for IIIF Search API v1 endpoints. Point `base_url`
+    at the institution's search service. Responses are expected to be
+    IIIF Content Search compliant (AnnotationList / AnnotationPage).
+  formats: [manifest, image]
+
+notes: |
+  Spec: https://iiif.io/api/search/1.0/ — AnnotationList responses where
+  each `on` points to the parent IIIF manifest and each `resource` carries
+  the matching text.
+
+entry_point: "connector:IIIFGenericConnector"

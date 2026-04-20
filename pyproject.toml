@@ -61,6 +61,11 @@ ignore = [
 
 [tool.ruff.lint.per-file-ignores]
 "**/tests/**" = ["S", "N"]
+# Error classes carry semantic domain names, not the Error suffix.
+"core/src/portolan_core/errors.py" = ["N818"]
+# Intentional grouping of __all__ by logical section.
+"core/src/portolan_core/__init__.py" = ["RUF022"]
+"core/src/portolan_core/models/__init__.py" = ["RUF022"]
 
 [tool.ruff.format]
 quote-style = "double"

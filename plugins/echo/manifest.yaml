@@ -1,0 +1,30 @@
+manifest_version: "1"
+
+id: echo
+name: "Echo (fixtures)"
+protocol: fixtures
+maintainer: "portolan-core@example.org"
+status: official
+version: "0.1.0"
+
+capabilities:
+  - full_text
+  - pagination
+
+rate_limit:
+  rps: 100
+  burst: 100
+
+auth_scheme: none
+rights_default: CC0
+
+coverage:
+  description: "In-memory fixtures used for tests and the first smoke demos."
+  formats: [test]
+
+notes: |
+  This plugin exists to validate the loader, registry, and CLI without
+  touching the network. It is not a real source — never register it in
+  production. The fixture set lives next to the connector.
+
+entry_point: "connector:EchoConnector"

@@ -1,0 +1,67 @@
+[
+  {
+    "native_id": "echo-0001",
+    "title": "The Apparition",
+    "type": "work",
+    "creator": "Gustave Moreau",
+    "date_start": "1876",
+    "date_end": "1877",
+    "place": "Paris",
+    "subject": "Salome",
+    "description": "Watercolor, a recurring Moreau theme of Salome and the severed head of John the Baptist.",
+    "image_url": "https://example.org/echo/0001.jpg",
+    "iiif_manifest": "https://example.org/echo/0001/manifest.json"
+  },
+  {
+    "native_id": "echo-0002",
+    "title": "Saint Sébastien",
+    "type": "work",
+    "creator": "Andrea Mantegna",
+    "date_start": "1480",
+    "date_end": "1490",
+    "place": "Mantua",
+    "subject": "Martyrdom of Saint Sebastian",
+    "description": "Oil on canvas, attributed to Mantegna's late Mantuan period.",
+    "image_url": "https://example.org/echo/0002.jpg",
+    "iiif_manifest": "https://example.org/echo/0002/manifest.json"
+  },
+  {
+    "native_id": "echo-0003",
+    "title": "Orfèvrerie Art Déco",
+    "type": "object",
+    "creator": "Jean Puiforcat",
+    "date_start": "1928",
+    "date_end": "1932",
+    "place": "Paris",
+    "subject": "Silverwork",
+    "description": "Geometric silver tea set, a classic example of late-1920s French Art Déco craftsmanship.",
+    "image_url": "https://example.org/echo/0003.jpg",
+    "iiif_manifest": "https://example.org/echo/0003/manifest.json"
+  },
+  {
+    "native_id": "echo-0004",
+    "title": "Map of the Mediterranean (Portolan chart)",
+    "type": "manifest",
+    "creator": "Abraham Cresques",
+    "date_start": "1375",
+    "date_end": "1375",
+    "place": "Mallorca",
+    "subject": "Cartography",
+    "description": "Vellum portolan chart depicting the Mediterranean coastlines; reference of medieval nautical cartography.",
+    "image_url": "https://example.org/echo/0004.jpg",
+    "iiif_manifest": "https://example.org/echo/0004/manifest.json"
+  },
+  {
+    "native_id": "echo-0005",
+    "title": "Salome Dancing Before Herod",
+    "type": "work",
+    "creator": "Gustave Moreau",
+    "date_start": "1876",
+    "date_end": "1876",
+    "place": "Paris",
+    "subject": "Salome",
+    "description": "Oil on canvas, exhibited at the 1876 Salon; one of Moreau's most ornate compositions.",
+    "image_url": "https://example.org/echo/0005.jpg",
+    "iiif_manifest": "https://example.org/echo/0005/manifest.json"
+  }
+]
