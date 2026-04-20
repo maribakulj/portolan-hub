@@ -1,0 +1,71 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+*.cover
+.hypothesis/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# uv / poetry
+.uv/
+uv.lock
+poetry.lock
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Node / SvelteKit
+console/node_modules/
+console/.svelte-kit/
+console/build/
+console/.vite/
+console/package-lock.json
+console/pnpm-lock.yaml
+console/yarn.lock
+
+# Environment
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Docs build
+docs/site/
+
+# OS
+Thumbs.db
+
+# Local data
+data/
+*.sqlite
+*.sqlite3
+*.db
+
+# Secrets
+secrets/
+*.pem
+*.key

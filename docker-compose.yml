@@ -1,0 +1,59 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: portolan-api
+    ports:
+      - "8000:8000"
+    environment:
+      PORTOLAN_LOG_LEVEL: ${PORTOLAN_LOG_LEVEL:-INFO}
+      PORTOLAN_API_HOST: 0.0.0.0
+      PORTOLAN_API_PORT: 8000
+      PORTOLAN_CORS_ORIGINS: ${PORTOLAN_CORS_ORIGINS:-http://localhost:3000,http://localhost:5173}
+      PORTOLAN_API_TOKEN: ${PORTOLAN_API_TOKEN:-dev-token-change-me}
+      PORTOLAN_CONTACT_EMAIL: ${PORTOLAN_CONTACT_EMAIL:-contact@example.org}
+      PORTOLAN_REDIS_URL: redis://redis:6379/0
+    depends_on:
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./api/src:/app/api/src:ro
+      - ./core/src:/app/core/src:ro
+      - ./sdk/src:/app/sdk/src:ro
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health').read()"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 10s
+
+  redis:
+    image: redis:7-alpine
+    container_name: portolan-redis
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--save", "", "--appendonly", "no"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 2s
+      retries: 5
+
+  console:
+    image: node:20-alpine
+    container_name: portolan-console
+    working_dir: /app
+    ports:
+      - "3000:3000"
+    environment:
+      PUBLIC_API_BASE_URL: ${PUBLIC_API_BASE_URL:-http://localhost:8000}
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0 --port 3000"
+    volumes:
+      - ./console:/app
+      - console_node_modules:/app/node_modules
+    depends_on:
+      - api
+
+volumes:
+  console_node_modules:

@@ -1,0 +1,57 @@
+name: Plugin request
+description: Request a connector for a new heritage source.
+title: "[plugin] "
+labels: ["plugin", "triage"]
+body:
+  - type: input
+    id: institution
+    attributes:
+      label: Institution
+      description: Name of the museum, library, archive, or aggregator.
+    validations:
+      required: true
+
+  - type: input
+    id: portal
+    attributes:
+      label: Portal URL
+    validations:
+      required: true
+
+  - type: input
+    id: api
+    attributes:
+      label: API documentation URL
+
+  - type: dropdown
+    id: protocol
+    attributes:
+      label: Expected protocol
+      options:
+        - OAI-PMH
+        - SRU
+        - IIIF Search API
+        - REST / JSON
+        - SPARQL
+        - Unknown / other
+    validations:
+      required: true
+
+  - type: textarea
+    id: sample
+    attributes:
+      label: Sample record
+      description: Paste one example response if publicly available.
+
+  - type: textarea
+    id: rights
+    attributes:
+      label: Rights / licensing notes
+      description: Known terms of use, rate limits, required contact.
+
+  - type: checkboxes
+    id: maintenance
+    attributes:
+      label: Maintenance
+      options:
+        - label: I (or my organization) am willing to maintain this plugin.

@@ -1,0 +1,58 @@
+site_name: Portolan Hub
+site_description: Unified query layer for distributed heritage data.
+site_url: https://portolan-hub.example.org/
+repo_url: https://github.com/maribakulj/portolan-hub
+repo_name: maribakulj/portolan-hub
+docs_dir: .
+site_dir: site
+
+theme:
+  name: material
+  language: en
+  palette:
+    - scheme: default
+      primary: deep orange
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: deep orange
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+
+nav:
+  - Home: index.md
+  - Architecture: architecture.md
+  - ADRs:
+      - Overview: adr/README.md
+      - "0001 — Choix techniques fondateurs": adr/0001-choix-techniques-fondateurs.md
+      - Template: adr/template.md
+  - Plugins:
+      - Authoring (TBD): plugins/authoring.md
+  - Roadmap:
+      - Sprint plan: ../ROADMAP.md
+      - Project README: ../README.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight
+  - pymdownx.snippets
+  - toc:
+      permalink: true
+
+exclude_docs: |
+  site/
